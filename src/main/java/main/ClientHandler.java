@@ -1,6 +1,7 @@
 package main;
 
 import commands.*;
+import config.DbConnection;
 import model.User;
 import model.UserRole;
 import model.UserRoleEnum;
@@ -11,6 +12,7 @@ import java.io.*;
 import java.net.Socket;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Collections;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -27,9 +29,9 @@ public class ClientHandler implements Runnable {
     private User currentUser;
     private volatile boolean running = true;
 
-    public ClientHandler(Socket clientSocket, CommandFactory commandFactory) {
+    public ClientHandler(Socket clientSocket, CommandFactory commandFactory) throws SQLException {
         this.commandFactory = commandFactory;
-        this.connection = createConnection();
+        this.connection = DbConnection.getConnection();
         this.clientSocket = clientSocket;
 
         BaseRepository baseRepository = new BaseRepository(connection);
@@ -44,16 +46,6 @@ public class ClientHandler implements Runnable {
         this.userRolesService = new UserRoleService(userRoleRepository);
 
         CommandFactoryInit.initializeCommands(this.commandFactory, userService, postService, moodService, userRolesService, this);
-    }
-
-    private Connection createConnection() {
-        try {
-            return DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/JDBC_likeBook_db", "root", "Root.1234"
-            );
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to create database connection", e);
-        }
     }
 
     public void closeConnection() {

@@ -1306,7 +1306,7 @@ likes_id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="371" parent="347" name="id">
-      <AutoIncrement>3</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>

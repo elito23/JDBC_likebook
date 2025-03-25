@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aad9a9f8-cd27-43ec-ae47-7ecdae0b7d0c" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/96b79593-3f3c-4410-88e2-91106ea7be75.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/96b79593-3f3c-4410-88e2-91106ea7be75.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +39,8 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
@@ -130,7 +130,8 @@
       <workItem from="1742458490431" duration="21869000" />
       <workItem from="1742580962743" duration="4029000" />
       <workItem from="1742737660277" duration="6572000" />
-      <workItem from="1742805588006" duration="2811000" />
+      <workItem from="1742805588006" duration="3798000" />
+      <workItem from="1742892582908" duration="4125000" />
     </task>
     <servers />
   </component>
