@@ -14,8 +14,31 @@ public class Client {
         String host = "localhost";
         int port = 1234;
 
-        try (Socket socket = new Socket(host, port);
-             BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        Socket socket = null;
+        int retries = 3;
+
+        for (int i = 0; i < retries; i++) {
+            try {
+                socket = new Socket(host, port);
+                break;
+            } catch (IOException e) {
+                logger.log(Level.WARNING, "Attempt " + (i + 1) + ": Unable to connect to server.", e);
+                System.err.println("Attempt " + (i + 1) + ": Unable to connect to LikeBook server.");
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException ex) {
+                    Thread.currentThread().interrupt();
+                    return;
+                }
+            }
+        }
+
+        if (socket == null) {
+            System.err.println("Failed to connect to LikeBook server after multiple attempts.");
+            return;
+        }
+
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
              BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
              BufferedReader consoleReader = new BufferedReader(new InputStreamReader(System.in))) {
 

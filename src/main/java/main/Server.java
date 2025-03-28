@@ -21,8 +21,30 @@ public class Server {
     static int countClients = 1;
 
     public static void main(String[] args) {
-        try (ServerSocket serverSocket = new ServerSocket(PORT);
-             Connection connection = DbConnection.getConnection()) {
+        Connection connection = null;
+        int retries = 3;
+        for (int i = 0; i < retries; i++) {
+            try {
+                connection = DbConnection.getConnection();
+                break;
+            } catch (SQLException e) {
+                logger.log(Level.SEVERE, "Failed to connect to DB (attempt " + (i + 1) + ")", e);
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException ie) {
+                    Thread.currentThread().interrupt();
+                    logger.warning("Retry sleep interrupted");
+                    return;
+                }
+            }
+        }
+
+        if (connection == null) {
+            logger.severe("Could not establish DB connection after multiple attempts. Server shutting down.");
+            System.out.println("Could not establish DB connection after multiple attempts. Server shutting down.");
+            return;
+        }
+        try (ServerSocket serverSocket = new ServerSocket(PORT)) {
 
             logger.info("Initializing database...");
             System.out.println("Initializing database...");

@@ -1,4 +1,84 @@
-март 28, 2025 10:10:04 СЛ.ОБ. main.Server main
+март 28, 2025 11:19:29 СЛ.ОБ. main.Server main
 INFO: Initializing database...
-март 28, 2025 10:10:05 СЛ.ОБ. main.Server main
+март 28, 2025 11:19:29 СЛ.ОБ. main.Server main
+INFO: Likebook server started on port 1234
+март 28, 2025 11:19:39 СЛ.ОБ. main.Server main
+INFO: Client 1 connected: /127.0.0.1
+март 28, 2025 11:20:27 СЛ.ОБ. commands.CreatePostCommand execute
+WARNING: Invalid mood name input: HGF: 
+java.lang.IllegalArgumentException: No enum constant model.MoodNameEnum.HGF
+	at java.base/java.lang.Enum.valueOf(Enum.java:273)
+	at model.MoodNameEnum.valueOf(MoodNameEnum.java:3)
+	at commands.CreatePostCommand.execute(CreatePostCommand.java:43)
+	at commands.CommandFactory.executeCommand(CommandFactory.java:48)
+	at main.ClientHandler.handleCommand(ClientHandler.java:115)
+	at main.ClientHandler.run(ClientHandler.java:90)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+март 28, 2025 11:20:57 СЛ.ОБ. commands.DeletePostCommand execute
+WARNING: Invalid post ID format: 
+java.lang.NumberFormatException: For input string: "r"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Long.parseLong(Long.java:711)
+	at java.base/java.lang.Long.parseLong(Long.java:834)
+	at commands.DeletePostCommand.execute(DeletePostCommand.java:32)
+	at commands.CommandFactory.executeCommand(CommandFactory.java:48)
+	at main.ClientHandler.handleCommand(ClientHandler.java:115)
+	at main.ClientHandler.run(ClientHandler.java:90)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+март 28, 2025 11:21:26 СЛ.ОБ. commands.LikeDislikeCommand execute
+SEVERE: Invalid post ID format: 
+java.lang.NumberFormatException: For input string: "g"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Long.parseLong(Long.java:711)
+	at java.base/java.lang.Long.parseLong(Long.java:834)
+	at commands.LikeDislikeCommand.execute(LikeDislikeCommand.java:31)
+	at commands.CommandFactory.executeCommand(CommandFactory.java:48)
+	at main.ClientHandler.handleCommand(ClientHandler.java:115)
+	at main.ClientHandler.run(ClientHandler.java:90)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+март 28, 2025 11:22:05 СЛ.ОБ. commands.FindPostCommand findPostById
+SEVERE: Invalid ID format: 
+java.lang.NumberFormatException: For input string: "g"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Long.parseLong(Long.java:711)
+	at java.base/java.lang.Long.parseLong(Long.java:834)
+	at commands.FindPostCommand.findPostById(FindPostCommand.java:51)
+	at commands.FindPostCommand.execute(FindPostCommand.java:38)
+	at commands.CommandFactory.executeCommand(CommandFactory.java:48)
+	at main.ClientHandler.handleCommand(ClientHandler.java:115)
+	at main.ClientHandler.run(ClientHandler.java:90)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+март 28, 2025 11:23:36 СЛ.ОБ. main.Server main
+INFO: Client 2 connected: /127.0.0.1
+март 28, 2025 11:24:29 СЛ.ОБ. commands.DeletePostCommand execute
+WARNING: Invalid post ID format: 
+java.lang.NumberFormatException: For input string: "t4"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Long.parseLong(Long.java:711)
+	at java.base/java.lang.Long.parseLong(Long.java:834)
+	at commands.DeletePostCommand.execute(DeletePostCommand.java:32)
+	at commands.CommandFactory.executeCommand(CommandFactory.java:48)
+	at main.ClientHandler.handleCommand(ClientHandler.java:115)
+	at main.ClientHandler.run(ClientHandler.java:90)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+март 28, 2025 11:25:23 СЛ.ОБ. commands.DeleteUserCommand execute
+SEVERE: Invalid user ID format: 
+java.lang.NumberFormatException: For input string: "g"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Long.parseLong(Long.java:711)
+	at java.base/java.lang.Long.parseLong(Long.java:834)
+	at commands.DeleteUserCommand.execute(DeleteUserCommand.java:33)
+	at commands.CommandFactory.executeCommand(CommandFactory.java:48)
+	at main.ClientHandler.handleCommand(ClientHandler.java:115)
+	at main.ClientHandler.run(ClientHandler.java:90)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+март 28, 2025 11:29:09 СЛ.ОБ. main.Server main
+INFO: Initializing database...
+март 28, 2025 11:29:09 СЛ.ОБ. main.Server main
 INFO: Likebook server started on port 1234
