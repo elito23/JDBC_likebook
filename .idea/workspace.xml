@@ -5,26 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aad9a9f8-cd27-43ec-ae47-7ecdae0b7d0c" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/96b79593-3f3c-4410-88e2-91106ea7be75.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/96b79593-3f3c-4410-88e2-91106ea7be75.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/CreatePostCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/CreatePostCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/DeletePostCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/DeletePostCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/DeleteUserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/DeleteUserCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/FindPostCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/FindPostCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/LikeDislikeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/LikeDislikeCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/ListMoodsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/ListMoodsCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/ListPostsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/ListPostsCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/ListUsersCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/ListUsersCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/LoginCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/LoginCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/RegisterUserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/RegisterUserCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/config/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/DbConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/init/DBInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/init/DBInit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repositories/MoodRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repositories/MoodRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +136,7 @@
       <workItem from="1742805588006" duration="3798000" />
       <workItem from="1742892582908" duration="4846000" />
       <workItem from="1743011213889" duration="9416000" />
-      <workItem from="1743144789527" duration="21349000" />
+      <workItem from="1743144789527" duration="22039000" />
     </task>
     <servers />
   </component>
