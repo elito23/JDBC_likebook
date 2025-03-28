@@ -24,7 +24,6 @@ public class DBInit {
             System.out.println("Mood table initialized with enum values.");
         } catch (SQLException e) {
             System.err.println("Error initializing user roles: " + e.getMessage());
-            e.printStackTrace();
         }
     }
 
@@ -40,7 +39,6 @@ public class DBInit {
             System.out.println("User roles initialized successfully.");
         } catch (SQLException e) {
             System.err.println("Error initializing user roles: " + e.getMessage());
-            e.printStackTrace();
         }
     }
 
@@ -114,7 +112,6 @@ public class DBInit {
             System.out.println("All tables created successfully (if they didn't already exist).");
         } catch (SQLException e) {
             System.err.println("Error creating tables: " + e.getMessage());
-            e.printStackTrace();
         }
     }
 

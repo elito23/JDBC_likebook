@@ -1055,331 +1055,114 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <schema id="307" parent="1" name="information_schema">
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <schema id="308" parent="1" name="jdbc_likebook_db">
+    <schema id="308" parent="1" name="judgev2_db">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="309" parent="1" name="judgev2_db">
+    <schema id="309" parent="1" name="library_management_exam">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="310" parent="1" name="library_management_exam">
+    <schema id="310" parent="1" name="likebookjdbc_db">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="311" parent="1" name="likebookjdbc_db">
+    <schema id="311" parent="1" name="likebooks_db">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="312" parent="1" name="likebooks_db">
+    <schema id="312" parent="1" name="mini_orm">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="313" parent="1" name="mini_orm">
+    <schema id="313" parent="1" name="minions">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="314" parent="1" name="minions">
+    <schema id="314" parent="1" name="minions_db">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="315" parent="1" name="minions_db">
+    <schema id="315" parent="1" name="mobilele_db">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="316" parent="1" name="mobilele_db">
+    <schema id="316" parent="1" name="my_first">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="317" parent="1" name="my_first">
+    <schema id="317" parent="1" name="mymusicdb_exam">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="318" parent="1" name="mymusicdb_exam">
+    <schema id="318" parent="1" name="mysql">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="319" parent="1" name="mysql">
+    <schema id="319" parent="1" name="orders">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="320" parent="1" name="orders">
+    <schema id="320" parent="1" name="pathfinder">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="321" parent="1" name="pathfinder">
+    <schema id="321" parent="1" name="performance_schema">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="322" parent="1" name="performance_schema">
+    <schema id="322" parent="1" name="preserves_db">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="323" parent="1" name="preserves_db">
+    <schema id="323" parent="1" name="real_estate_db">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="324" parent="1" name="real_estate_db">
+    <schema id="324" parent="1" name="relations">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="325" parent="1" name="relations">
+    <schema id="325" parent="1" name="restaurant">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="326" parent="1" name="restaurant">
+    <schema id="326" parent="1" name="sap_project_db">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="327" parent="1" name="sap_project_db">
+    <schema id="327" parent="1" name="school">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="328" parent="1" name="school">
+    <schema id="328" parent="1" name="shampoo_company">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="329" parent="1" name="shampoo_company">
+    <schema id="329" parent="1" name="shoppinglist_exam">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="330" parent="1" name="shoppinglist_exam">
+    <schema id="330" parent="1" name="sofftuni_jpa">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="331" parent="1" name="sofftuni_jpa">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="332" parent="1" name="soft_uni">
+    <schema id="331" parent="1" name="soft_uni">
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <schema id="333" parent="1" name="spring_data_intro">
+    <schema id="332" parent="1" name="spring_data_intro">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="334" parent="1" name="sys">
+    <schema id="333" parent="1" name="sys">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="335" parent="1" name="unibersity">
+    <schema id="334" parent="1" name="unibersity">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="336" parent="1" name="volcanoes">
+    <schema id="335" parent="1" name="volcanoes">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="337" parent="1" name="zadacha_5">
+    <schema id="336" parent="1" name="zadacha_5">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="338" parent="1" name="zadacha_6">
+    <schema id="337" parent="1" name="zadacha_6">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <user id="339" parent="1" name="mysql.infoschema">
+    <user id="338" parent="1" name="mysql.infoschema">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="340" parent="1" name="mysql.session">
+    <user id="339" parent="1" name="mysql.session">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="341" parent="1" name="mysql.sys">
+    <user id="340" parent="1" name="mysql.sys">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="342" parent="1" name="root">
+    <user id="341" parent="1" name="root">
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="343" parent="308" name="moods">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <table id="344" parent="308" name="posts">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <table id="345" parent="308" name="posts_likes">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <table id="346" parent="308" name="user_roles">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <table id="347" parent="308" name="users">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <table id="348" parent="308" name="users_user_roles">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <column id="349" parent="343" name="id">
-      <AutoIncrement>4</AutoIncrement>
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="350" parent="343" name="name">
-      <DataType>enum(&apos;HAPPY&apos;, &apos;SAD&apos;, &apos;INSPIRED&apos;)|0e</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="351" parent="343" name="description">
-      <DataType>varchar(255)|0s</DataType>
-      <Position>3</Position>
-    </column>
-    <key id="352" parent="343" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-    </key>
-    <column id="353" parent="344" name="id">
-      <AutoIncrement>1</AutoIncrement>
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="354" parent="344" name="content">
-      <DataType>text|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="355" parent="344" name="user_id">
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="356" parent="344" name="mood_id">
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <foreign-key id="357" parent="344" name="posts_ibfk_1">
-      <ColNames>user_id</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>id</RefColNames>
-      <RefTableName>users</RefTableName>
-    </foreign-key>
-    <foreign-key id="358" parent="344" name="posts_ibfk_2">
-      <ColNames>mood_id</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>id</RefColNames>
-      <RefTableName>moods</RefTableName>
-    </foreign-key>
-    <index id="359" parent="344" name="user_id">
-      <ColNames>user_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="360" parent="344" name="mood_id">
-      <ColNames>mood_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="361" parent="344" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-    </key>
-    <column id="362" parent="345" name="post_id">
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="363" parent="345" name="likes_id">
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <foreign-key id="364" parent="345" name="posts_likes_ibfk_2">
-      <ColNames>post_id</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>id</RefColNames>
-      <RefTableName>posts</RefTableName>
-    </foreign-key>
-    <foreign-key id="365" parent="345" name="posts_likes_ibfk_1">
-      <ColNames>likes_id</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>id</RefColNames>
-      <RefTableName>users</RefTableName>
-    </foreign-key>
-    <index id="366" parent="345" name="likes_id">
-      <ColNames>likes_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="367" parent="345" name="PRIMARY">
-      <ColNames>post_id
-likes_id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-    </key>
-    <column id="368" parent="346" name="id">
-      <AutoIncrement>3</AutoIncrement>
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="369" parent="346" name="user_role">
-      <DataType>enum(&apos;ADMIN&apos;, &apos;USER&apos;)|0e</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <key id="370" parent="346" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-    </key>
-    <column id="371" parent="347" name="id">
-      <AutoIncrement>1</AutoIncrement>
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="372" parent="347" name="username">
-      <DataType>varchar(50)|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="373" parent="347" name="password">
-      <DataType>varchar(100)|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="374" parent="347" name="email">
-      <DataType>varchar(100)|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <index id="375" parent="347" name="username">
-      <ColNames>username</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="376" parent="347" name="email">
-      <ColNames>email</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="377" parent="347" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-    </key>
-    <key id="378" parent="347" name="username">
-      <ColNames>username</ColNames>
-      <UnderlyingIndexName>username</UnderlyingIndexName>
-    </key>
-    <key id="379" parent="347" name="email">
-      <ColNames>email</ColNames>
-      <UnderlyingIndexName>email</UnderlyingIndexName>
-    </key>
-    <column id="380" parent="348" name="user_id">
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="381" parent="348" name="user_roles_id">
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <foreign-key id="382" parent="348" name="users_user_roles_ibfk_1">
-      <ColNames>user_id</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>id</RefColNames>
-      <RefTableName>users</RefTableName>
-    </foreign-key>
-    <foreign-key id="383" parent="348" name="users_user_roles_ibfk_2">
-      <ColNames>user_roles_id</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>id</RefColNames>
-      <RefTableName>user_roles</RefTableName>
-    </foreign-key>
-    <index id="384" parent="348" name="user_roles_id">
-      <ColNames>user_roles_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="385" parent="348" name="PRIMARY">
-      <ColNames>user_id
-user_roles_id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-    </key>
   </database-model>
 </dataSource>

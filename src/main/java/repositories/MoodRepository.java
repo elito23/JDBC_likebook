@@ -15,6 +15,7 @@ public class MoodRepository {
     private Connection connection;
     private final BaseRepository baseRepository;
 
+
     public MoodRepository(Connection connection, BaseRepository baseRepository) {
         this.connection = connection;
         this.baseRepository = baseRepository;
@@ -29,7 +30,7 @@ public class MoodRepository {
                     return Optional.of(baseRepository.mapToMood(rs));
             }
         } catch (SQLException e) {
-            System.err.println("Error fetching mood by name: " + moodNameEnum + " -> " + e.getMessage());
+            System.err.println("Error fetching mood by name: " + moodNameEnum);
             throw e;
         }
         return Optional.empty();

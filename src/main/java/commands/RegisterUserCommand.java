@@ -1,5 +1,6 @@
 package commands;
 
+import config.AppLogger;
 import model.User;
 import model.UserRole;
 import model.UserRoleEnum;
@@ -8,11 +9,14 @@ import service.UserService;
 
 import java.sql.SQLException;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class RegisterUserCommand  implements Command{
     private final UserService userService;
     private final UserRoleService userRoleService;
+    private static final Logger logger = AppLogger.getLogger(RegisterUserCommand.class);
 
     public RegisterUserCommand(UserService userService, UserRoleService userRoleService) {
         this.userService = userService;
@@ -56,9 +60,11 @@ public class RegisterUserCommand  implements Command{
                             .collect(Collectors.joining(", "));
 
         } catch (IllegalArgumentException e) {
+            logger.log(Level.WARNING,"Invalid role: " ,e);
             return "Invalid role. Available roles: ADMIN, USER";
         }
         catch (SQLException e) {
+            logger.log(Level.WARNING,"Error registering user: " ,e);
             return "Error registering user: " + e.getMessage();
         }
     }

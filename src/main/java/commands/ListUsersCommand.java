@@ -1,14 +1,19 @@
 package commands;
 
+import config.AppLogger;
 import model.User;
 import service.UserService;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class ListUsersCommand implements Command {
     private final UserService userService;
+    private static final Logger logger = AppLogger.getLogger(ListUsersCommand.class);
+
 
     public ListUsersCommand(UserService userService) {
         this.userService = userService;
@@ -27,7 +32,8 @@ public class ListUsersCommand implements Command {
             }
             return result.toString();
         } catch (SQLException e) {
-            return "Error retrieving users: " + e.getMessage();
+            logger.log(Level.SEVERE, "Error retrieving users: ", e);
+            return "Error retrieving users!";
         }
     }
 

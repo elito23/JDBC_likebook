@@ -1,15 +1,20 @@
 package commands;
 
+import config.AppLogger;
 import main.ClientHandler;
 import model.User;
 import service.UserService;
 
 import java.sql.SQLException;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DeleteUserCommand implements Command{
     private final UserService userService;
     private final ClientHandler clientHandler;
+    private static final Logger logger = AppLogger.getLogger(DeleteUserCommand.class);
+
 
     public DeleteUserCommand(UserService userService, ClientHandler clientHandler) {
         this.userService = userService;
@@ -37,8 +42,10 @@ public class DeleteUserCommand implements Command{
             }
             return "User deleted successfully";
         }catch (SQLException e) {
-            return "Error deleting user: " + e.getMessage();
+            logger.log(Level.SEVERE, "Error deleting user: ", e);
+            return "Error deleting user!";
         } catch (NumberFormatException e) {
+            logger.log(Level.SEVERE, "Invalid user ID format: ", e);
             return "Invalid user ID format.";
         }
     }

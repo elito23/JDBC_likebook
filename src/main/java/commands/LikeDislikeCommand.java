@@ -1,13 +1,18 @@
 package commands;
 
+import config.AppLogger;
 import main.ClientHandler;
 import service.PostService;
 
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class LikeDislikeCommand implements Command{
     private final PostService postService;
     private final ClientHandler clientHandler;
+    private static final Logger logger = AppLogger.getLogger(LikeDislikeCommand.class);
+
 
     public LikeDislikeCommand(PostService postService, ClientHandler clientHandler) {
         this.postService = postService;
@@ -36,9 +41,11 @@ public class LikeDislikeCommand implements Command{
                 return "Post was disliked!";
             }
         } catch (NumberFormatException e) {
+            logger.log(Level.SEVERE, "Invalid post ID format: ", e);
             return "Invalid post ID format.";
         } catch (SQLException e) {
-            return "Error liking/disliking post: " + e.getMessage();
+            logger.log(Level.SEVERE, "Error liking/disliking post: ", e);
+            return "Error liking/disliking post!";
         }
     }
 }

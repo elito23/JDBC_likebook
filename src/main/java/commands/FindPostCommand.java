@@ -1,5 +1,6 @@
 package commands;
 
+import config.AppLogger;
 import model.Post;
 import main.ClientHandler;
 import service.PostService;
@@ -7,10 +8,14 @@ import service.PostService;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class FindPostCommand implements Command {
     private final PostService postService;
     private final ClientHandler clientHandler;
+    private static final Logger logger = AppLogger.getLogger(FindPostCommand.class);
+
 
     public FindPostCommand(PostService postService, ClientHandler clientHandler) {
         this.postService = postService;
@@ -37,7 +42,8 @@ public class FindPostCommand implements Command {
                 return "Invalid search type. Use 'by_id' or 'by_user'.";
             }
         } catch (SQLException e) {
-            return "Error finding post: " + e.getMessage();
+            logger.log(Level.SEVERE, "Error finding post: ", e);
+            return "Error finding post!";
         }
     }
     private String findPostById(String idString) throws SQLException {
@@ -51,6 +57,7 @@ public class FindPostCommand implements Command {
                 return "No post found with ID " + id;
             }
         } catch (NumberFormatException e) {
+            logger.log(Level.SEVERE, "Invalid ID format: ", e);
             return "Invalid ID format.";
         }
     }

@@ -1,9 +1,15 @@
 package main;
 
+import config.AppLogger;
+
 import java.io.*;
 import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Client {
+    private static final Logger logger = AppLogger.getLogger(Client.class);
+
     public static void main(String[] args) {
         String host = "localhost";
         int port = 1234;
@@ -21,6 +27,7 @@ public class Client {
                         System.out.println(serverMessage);
                     }
                 } catch (IOException e) {
+                    logger.log(Level.WARNING,"Connection closed: ",e);
                     System.err.println("Connection closed.");
                 }
             }).start();
@@ -36,7 +43,8 @@ public class Client {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, "Unable to connect to the LikeBook server or lost connection", e);
+            System.err.println("Unable to connect to the LikeBook server or lost connection!");
         }
     }
 }

@@ -1,15 +1,19 @@
 package commands;
 
+import config.AppLogger;
 import main.ClientHandler;
 import model.Post;
 import service.PostService;
 
 import java.sql.SQLException;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DeletePostCommand implements Command {
     private final PostService postService;
     private final ClientHandler clientHandler;
+    private static final Logger logger = AppLogger.getLogger(DeletePostCommand.class);
 
     public DeletePostCommand(PostService postService, ClientHandler clientHandler) {
         this.postService = postService;
@@ -33,8 +37,10 @@ public class DeletePostCommand implements Command {
             postService.deleteById(postId,clientHandler.getCurrentUser());
             return "Post with ID " + postId + " deleted successfully!";
         } catch (NumberFormatException e) {
+            logger.log(Level.WARNING,"Invalid post ID format: ",e);
             return "Invalid post ID format.";
         } catch (SQLException e) {
+            logger.log(Level.WARNING,"Error deleting post: ",e);
             return "Error deleting post: " + e.getMessage();
         }
     }

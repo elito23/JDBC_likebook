@@ -1,13 +1,18 @@
 package commands;
 
+import config.AppLogger;
 import model.Mood;
 import service.MoodService;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ListMoodsCommand implements Command {
     private final MoodService moodService;
+    private static final Logger logger = AppLogger.getLogger(ListMoodsCommand.class);
+
 
     public ListMoodsCommand(MoodService moodService) {
         this.moodService = moodService;
@@ -28,7 +33,8 @@ public class ListMoodsCommand implements Command {
 
             return result.toString();
         } catch (SQLException e) {
-            return "Error retrieving moods: " + e.getMessage();
+            logger.log(Level.SEVERE, "Error retrieving moods: ", e);
+            return "Error retrieving moods!";
         }
     }
 

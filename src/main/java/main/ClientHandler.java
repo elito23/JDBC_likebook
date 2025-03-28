@@ -1,6 +1,7 @@
 package main;
 
 import commands.*;
+import config.AppLogger;
 import config.DbConnection;
 import model.User;
 import model.UserRole;
@@ -15,16 +16,20 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Collections;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class ClientHandler implements Runnable {
-    private final Socket clientSocket;
+    private Socket clientSocket;
     private final CommandFactory commandFactory;
-    private final UserService userService;
-    private final PostService postService;
-    private final MoodService moodService;
-    private final UserRoleService userRolesService;
-    private final Connection connection;
+    private UserService userService;
+    private PostService postService;
+    private MoodService moodService;
+    private UserRoleService userRolesService;
+    private Connection connection;
+    private static final Logger logger = AppLogger.getLogger(ClientHandler.class);
+
 
     private User currentUser;
     private volatile boolean running = true;
@@ -33,12 +38,15 @@ public class ClientHandler implements Runnable {
         this.commandFactory = commandFactory;
         this.connection = DbConnection.getConnection();
         this.clientSocket = clientSocket;
+        initServices(connection);
 
+    }
+    private void initServices(Connection connection) {
         BaseRepository baseRepository = new BaseRepository(connection);
         UserRepository userRepository = new UserRepository(connection, baseRepository);
         PostRepository postRepository = new PostRepository(connection, baseRepository);
-        MoodRepository moodRepository = new MoodRepository(connection,baseRepository);
-        UserRoleRepository userRoleRepository = new UserRoleRepository(connection,baseRepository);
+        MoodRepository moodRepository = new MoodRepository(connection, baseRepository);
+        UserRoleRepository userRoleRepository = new UserRoleRepository(connection, baseRepository);
 
         this.userService = new UserService(userRepository);
         this.postService = new PostService(postRepository, userRoleRepository);
@@ -47,13 +55,20 @@ public class ClientHandler implements Runnable {
 
         CommandFactoryInit.initializeCommands(this.commandFactory, userService, postService, moodService, userRolesService, this);
     }
+    private void ensureConnectionIsAlive() throws SQLException {
+        if (connection == null || connection.isClosed() || !connection.isValid(2)) {
+            logger.warning("Lost DB connection. Reconnecting...");
+            this.connection = DbConnection.getConnection();
+            initServices(connection);
+        }
+    }
 
     public void closeConnection() {
         running = false;
         try {
             clientSocket.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.log(Level.WARNING, "Problem closing connection", e);
         }
     }
 
@@ -69,12 +84,21 @@ public class ClientHandler implements Runnable {
                 if (input == null) break;
                 System.out.println("Received input from main: " + input);
 
-                String response = handleCommand(input);
-
+                String response;
+                try {
+                    ensureConnectionIsAlive();
+                    response = handleCommand(input);
+                } catch (SQLException e) {
+                    logger.log(Level.SEVERE, "Database error during command execution", e);
+                    response = "A database error occurred. Please try again later.";
+                }
                 writer.println(response);
             }
         } catch (IOException e) {
-            System.err.println("Client disconnected: " + e.getMessage());
+            logger.log(Level.INFO, "Client disconnected", e);
+        }finally {
+            closeConnection();
+            logger.info("Connection closed for client: " + clientSocket.getInetAddress());
         }
     }
 
@@ -114,4 +138,5 @@ public class ClientHandler implements Runnable {
                 .map(UserRole::getUserRole)
                 .collect(Collectors.toSet());
     }
+
 }

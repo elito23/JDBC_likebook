@@ -1,5 +1,6 @@
 package commands;
 
+import config.AppLogger;
 import model.Mood;
 import model.MoodNameEnum;
 import model.Post;
@@ -10,12 +11,16 @@ import service.PostService;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class CreatePostCommand implements Command{
     private final PostService postService;
     private final MoodService moodService;
     private final ClientHandler clientHandler;
+    private static final Logger logger = AppLogger.getLogger(CreatePostCommand.class);
+
 
     public CreatePostCommand(PostService postService, MoodService moodService, ClientHandler clientHandler) {
         this.postService = postService;
@@ -47,8 +52,10 @@ public class CreatePostCommand implements Command{
             postService.createPost(post);
             return "Post created successfully!";
         } catch (IllegalArgumentException e) {
+            logger.log(Level.WARNING,"Invalid mood name input: " + moodNameStr+": ",e);
             return "Invalid mood name. Allowed moods: HAPPY, SAD, INSPIRED.";
         } catch (SQLException e) {
+            logger.log(Level.WARNING,"Error creating post: ",e);
             return "Error creating post: " + e.getMessage();
         }
     }
