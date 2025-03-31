@@ -22,15 +22,13 @@ import java.util.stream.Collectors;
 
 public class ClientHandler implements Runnable {
     private Socket clientSocket;
+    private Connection connection;
     private final CommandFactory commandFactory;
     private UserService userService;
     private PostService postService;
     private MoodService moodService;
     private UserRoleService userRolesService;
-    private Connection connection;
     private static final Logger logger = AppLogger.getLogger(ClientHandler.class);
-
-
     private User currentUser;
     private volatile boolean running = true;
 
@@ -40,27 +38,6 @@ public class ClientHandler implements Runnable {
         this.clientSocket = clientSocket;
         initServices(connection);
 
-    }
-    private void initServices(Connection connection) {
-        BaseRepository baseRepository = new BaseRepository(connection);
-        UserRepository userRepository = new UserRepository(connection, baseRepository);
-        PostRepository postRepository = new PostRepository(connection, baseRepository);
-        MoodRepository moodRepository = new MoodRepository(connection, baseRepository);
-        UserRoleRepository userRoleRepository = new UserRoleRepository(connection, baseRepository);
-
-        this.userService = new UserService(userRepository);
-        this.postService = new PostService(postRepository, userRoleRepository);
-        this.moodService = new MoodService(moodRepository);
-        this.userRolesService = new UserRoleService(userRoleRepository);
-
-        CommandFactoryInit.initializeCommands(this.commandFactory, userService, postService, moodService, userRolesService, this);
-    }
-    private void ensureConnectionIsAlive() throws SQLException {
-        if (connection == null || connection.isClosed() || !connection.isValid(2)) {
-            logger.warning("Lost DB connection. Reconnecting...");
-            this.connection = DbConnection.getConnection();
-            initServices(connection);
-        }
     }
 
     public void closeConnection() {
@@ -137,6 +114,27 @@ public class ClientHandler implements Runnable {
         return currentUser.getUserRoles().stream()
                 .map(UserRole::getUserRole)
                 .collect(Collectors.toSet());
+    }
+    private void initServices(Connection connection) {
+        BaseRepository baseRepository = new BaseRepository(connection);
+        UserRepository userRepository = new UserRepository(connection, baseRepository);
+        PostRepository postRepository = new PostRepository(connection, baseRepository);
+        MoodRepository moodRepository = new MoodRepository(connection, baseRepository);
+        UserRoleRepository userRoleRepository = new UserRoleRepository(connection, baseRepository);
+
+        this.userService = new UserService(userRepository);
+        this.postService = new PostService(postRepository, userRoleRepository);
+        this.moodService = new MoodService(moodRepository);
+        this.userRolesService = new UserRoleService(userRoleRepository);
+
+        CommandFactoryInit.initializeCommands(this.commandFactory, userService, postService, moodService, userRolesService, this);
+    }
+    private void ensureConnectionIsAlive() throws SQLException {
+        if (connection == null || connection.isClosed() || !connection.isValid(2)) {
+            logger.warning("Lost DB connection. Reconnecting...");
+            this.connection = DbConnection.getConnection();
+            initServices(connection);
+        }
     }
 
 }

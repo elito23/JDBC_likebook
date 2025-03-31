@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 
 public class CommandFactory {
     private final Map<String, Command> commandMap = new TreeMap<>();
-
     private final Map<String, Command> anonymousCommands = new TreeMap<>();
     private final Map<String, Set<UserRoleEnum>> roleRestrictedCommands = new TreeMap<>();
 
@@ -22,13 +21,12 @@ public class CommandFactory {
     }
 
     public String executeCommand(String commandName, String[] args, Set<UserRoleEnum> userRoles) {
-
         String lowerCaseCommand = commandName.toLowerCase();
         Command command = commandMap.get(lowerCaseCommand);
 
         if (command == null) {
             if (userRoles.size() == 0)
-                return "Unknown command: " + commandName + "\nAvailable Commands: " + anonymousCommands.keySet().stream().collect(Collectors.joining(", "));
+                return "Unknown command: " + commandName + "\nAvailable Commands: " + getAvailableCommandsForAnonymous();
             else
                 return "Unknown command: " + commandName + "\nAvailable Commands: " + getAvailableCommandsForRoles(userRoles);
         }

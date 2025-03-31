@@ -24,9 +24,6 @@ public class PostRepository {
              ResultSet rs = stmt.executeQuery()) {
             while (rs.next())
                 posts.add(baseRepository.mapToPost(rs));
-        } catch (SQLException e) {
-            System.err.println("Error fetching posts:  " + e.getMessage());
-            throw e;
         }
         return posts;
     }
@@ -39,9 +36,6 @@ public class PostRepository {
                 if (rs.next())
                     return Optional.of(baseRepository.mapToPost(rs));
             }
-        } catch (SQLException e) {
-            System.err.println("Error fetching post by ID: " + e.getMessage());
-            throw e;
         }
         return Optional.empty();
     }
@@ -59,9 +53,6 @@ public class PostRepository {
                 while (rs.next())
                     posts.add(baseRepository.mapToPost(rs));
             }
-        } catch (SQLException e) {
-            System.err.println("Error fetching post by user username: " + username + " " + e.getMessage());
-            throw e;
         }
         return posts;
     }
@@ -78,9 +69,6 @@ public class PostRepository {
                     posts.add(baseRepository.mapToPost(rs));
                 }
             }
-        } catch (SQLException e) {
-            System.err.println("Error fetching post by user username not: " + e.getMessage());
-            throw e;
         }
         return posts;
     }
@@ -131,9 +119,6 @@ public class PostRepository {
             if (affectedRows == 0)
                 System.err.println("No post deleted with id " + id);
             System.out.println("Post with id " + id + " deleted successfully.");
-        } catch (SQLException e) {
-            System.err.println("Error deleting post: " + e.getMessage());
-            throw e;
         }
     }
     public void likePost(Long postId, User user) throws SQLException {

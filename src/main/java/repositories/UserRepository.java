@@ -27,9 +27,6 @@ public class UserRepository {
             while (rs.next()) {
                 users.add(baseRepository.mapToUser(rs));
             }
-        } catch (SQLException e) {
-            System.err.println("Error fetching users:  " + e.getMessage());
-            throw e;
         }
         return users;
 
@@ -43,9 +40,6 @@ public class UserRepository {
                 if (rs.next())
                     return Optional.of(baseRepository.mapToUser(rs));
             }
-        } catch (SQLException e) {
-            System.err.println("Error fetching user by id: " + id + " -> " + e.getMessage());
-            throw e;
         }
         return Optional.empty();
     }
@@ -58,9 +52,6 @@ public class UserRepository {
                 if (rs.next())
                     return Optional.of(baseRepository.mapToUser(rs));
             }
-        } catch (SQLException e) {
-            System.err.println("Error fetching user by username: " + username + " -> " + e.getMessage());
-            throw e;
         }
         return Optional.empty();
     }
@@ -85,9 +76,6 @@ public class UserRepository {
             }
             saveUserRoles(user);
             saveLikedPosts(user);
-        } catch (SQLException e) {
-            System.err.println("Error saving user: " + e.getMessage());
-            throw e;
         }
     }
 
@@ -107,9 +95,6 @@ public class UserRepository {
             }
             System.out.println("User with id " + id + " deleted successfully.");
             return;
-        } catch (SQLException e) {
-            System.err.println("Error deleting user: " + e.getMessage());
-            throw e;
         }
     }
     private void deleteUserRoles(Long userId) throws SQLException {
@@ -121,9 +106,6 @@ public class UserRepository {
             if (affectedRows == 0) {
                 System.err.println("No roles found for user ID: " + userId);
             }
-        } catch (SQLException e) {
-            System.err.println("Error deleting user roles: " + e.getMessage());
-            throw e;
         }
     }
 
@@ -136,9 +118,6 @@ public class UserRepository {
                 stmt.setLong(2, role.getId());
                 stmt.executeUpdate();
             }
-        } catch (SQLException e) {
-            System.err.println("Error saving user roles: " + e.getMessage());
-            throw e;
         }
     }
 
@@ -150,9 +129,6 @@ public class UserRepository {
                 stmt.setLong(2, user.getId());
                 stmt.executeUpdate();
             }
-        } catch (SQLException e) {
-            System.err.println("Error saving liked posts: " + e.getMessage());
-            throw e;
         }
     }
 }

@@ -29,9 +29,6 @@ public class MoodRepository {
                 if (rs.next())
                     return Optional.of(baseRepository.mapToMood(rs));
             }
-        } catch (SQLException e) {
-            System.err.println("Error fetching mood by name: " + moodNameEnum);
-            throw e;
         }
         return Optional.empty();
     }
@@ -44,9 +41,6 @@ public class MoodRepository {
                 if (rs.next())
                     return Optional.of(baseRepository.mapToMood(rs));
             }
-        } catch (SQLException e) {
-            System.err.println("Error fetching mood by ID: " + id + " -> " + e.getMessage());
-            throw e;
         }
         return Optional.empty();
     }
@@ -58,9 +52,6 @@ public class MoodRepository {
              ResultSet rs = stmt.executeQuery()) {
             while (rs.next())
                 moods.add(baseRepository.mapToMood(rs));
-        } catch (SQLException e) {
-            System.err.println("Error fetching all moods: " + e.getMessage());
-            throw e;
         }
         return moods;
     }
@@ -81,9 +72,6 @@ public class MoodRepository {
                 } else
                     throw new SQLException("Failed to retrieve generated mood ID.");
             }
-        } catch (SQLException e) {
-            System.err.println("Error saving mood: " + e.getMessage());
-            throw e;
         }
 
     }
@@ -103,9 +91,6 @@ public class MoodRepository {
             }
             System.out.println("Mood with id " + id + " deleted successfully.");
             return;
-        } catch (SQLException e) {
-            System.err.println("Error deleting mood: " + e.getMessage());
-            throw e;
         }
     }
 }

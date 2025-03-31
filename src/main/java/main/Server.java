@@ -16,7 +16,6 @@ import java.util.logging.Logger;
 
 public class Server {
     private static final Logger logger = AppLogger.getLogger(Server.class);
-
     private static final int PORT = 1234;
     static int countClients = 1;
 

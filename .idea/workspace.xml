@@ -5,10 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aad9a9f8-cd27-43ec-ae47-7ecdae0b7d0c" name="Changes" comment="Initial commit">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/96b79593-3f3c-4410-88e2-91106ea7be75.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/96b79593-3f3c-4410-88e2-91106ea7be75.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.log" beforeDir="false" afterPath="$PROJECT_DIR$/server.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/CommandFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/RegisterUserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/RegisterUserCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/AppLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/AppLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/DbConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/ClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repositories/BaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repositories/BaseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repositories/MoodRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repositories/MoodRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repositories/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repositories/PostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repositories/UserRoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repositories/UserRoleRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +65,7 @@
       <recent name="C:\Users\User\Desktop\SpringFundamentals_Web\exam6\demo\JDBClikebook\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.main.Server">
+  <component name="RunManager" selected="Application.main.Client">
     <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Server" />
       <module name="JDBClikebook" />
@@ -108,8 +120,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.main.Server" />
         <item itemvalue="Application.main.Client" />
+        <item itemvalue="Application.main.Server" />
         <item itemvalue="Application.config.DbConnection" />
         <item itemvalue="Application.Server" />
       </list>
@@ -138,7 +150,9 @@
       <workItem from="1742805588006" duration="3798000" />
       <workItem from="1742892582908" duration="4846000" />
       <workItem from="1743011213889" duration="9416000" />
-      <workItem from="1743144789527" duration="24297000" />
+      <workItem from="1743144789527" duration="24887000" />
+      <workItem from="1743423544782" duration="7460000" />
+      <workItem from="1743431719826" duration="13512000" />
     </task>
     <servers />
   </component>
@@ -165,23 +179,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/repositories/UserRoleRepository.java</url>
-          <line>67</line>
+          <line>58</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/repositories/UserRoleRepository.java</url>
-          <line>52</line>
+          <line>46</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/commands/HelpCommand.java</url>
           <line>17</line>
           <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/config/DbConnection.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

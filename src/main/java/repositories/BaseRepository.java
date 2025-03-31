@@ -55,9 +55,6 @@ public class BaseRepository {
                     );
                 }
             }
-        } catch (SQLException e) {
-            System.err.println("Error fetching user with ID " + user_id + ": " + e.getMessage());
-            throw e;
         }
         return null;
     }
@@ -88,9 +85,6 @@ public class BaseRepository {
                 if (rs.next())
                     return mapToMood(rs);
             }
-        } catch (SQLException e) {
-            System.err.println("Error fetching mood for mood ID " + mood_id + ": " + e.getMessage());
-            throw e;
         }
         return null;
     }
@@ -112,9 +106,6 @@ public class BaseRepository {
                             findUserRolesByUserId(rs.getLong("id"))
                     ));
             }
-        } catch (SQLException e) {
-            System.err.println("Error fetching likes for post ID " + id + ": " + e.getMessage());
-            throw e;
         }
         return users;
     }
@@ -127,9 +118,6 @@ public class BaseRepository {
                 if (rs.next())
                     return mapToUser(rs);
             }
-        } catch (SQLException e) {
-            System.err.println("Error fetching user with ID " + user_id + ": " + e.getMessage());
-            throw e;
         }
         return null;
     }
@@ -145,9 +133,6 @@ public class BaseRepository {
                 while(rs.next())
                     roles.add(mapToUserRole(rs));
             }
-        }catch (SQLException e) {
-            System.err.println("Error fetching roles for user ID " + id + ": " + e.getMessage());
-            throw e;
         }
         return roles;
     }
@@ -161,9 +146,6 @@ public class BaseRepository {
                 while (rs.next())
                     posts.add(mapToPost(rs));
             }
-        } catch (SQLException e) {
-            System.err.println("Error fetching posts for user ID " + id + ": " + e.getMessage());
-            throw e;
         }
         return posts;
     }

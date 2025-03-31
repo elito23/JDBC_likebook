@@ -16,8 +16,6 @@ public class DbConnection {
     private static String USER;
     private static String PASSWORD;
     private static final Logger logger = AppLogger.getLogger(DbConnection.class);
-
-
     static {
         loadProperties("src/main/resources/config.properties");
     }

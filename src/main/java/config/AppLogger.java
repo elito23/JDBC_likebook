@@ -6,7 +6,6 @@ import java.io.UnsupportedEncodingException;
 import java.util.logging.*;
 
 public class AppLogger {
-
     private static final String LOG_FILE = "server.log";
     private static FileHandler fileHandler;
 

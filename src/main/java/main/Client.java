@@ -1,6 +1,7 @@
 package main;
 
 import config.AppLogger;
+import config.DbConnection;
 
 import java.io.*;
 import java.net.Socket;

@@ -27,7 +27,6 @@ public class RegisterUserCommand  implements Command{
     public String execute(String[] args) {
         if(args.length<4){
             return "Usage: register <username> <password> <email> <role1 role2>";
-
         }
         String username = args[0];
         String password = args[1];

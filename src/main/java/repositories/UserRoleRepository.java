@@ -27,9 +27,6 @@ public class UserRoleRepository {
              ResultSet rs = stmt.executeQuery()) {
             while (rs.next())
                 userRoles.add(baseRepository.mapToUserRole(rs));
-        } catch (SQLException e) {
-            System.err.println("Error fetching user roles: " + e.getMessage());
-            throw e;
         }
         return userRoles;
     }
@@ -42,9 +39,6 @@ public class UserRoleRepository {
                 if (rs.next())
                     return Optional.of(baseRepository.mapToUserRole(rs));
             }
-        } catch (SQLException e) {
-            System.err.println("Error fetching user role by ID: " + id + " -> " + e.getMessage());
-            throw e;
         }
         return Optional.empty();
     }
@@ -57,9 +51,6 @@ public class UserRoleRepository {
                 if (rs.next())
                     return Optional.of(baseRepository.mapToUserRole(rs));
             }
-        } catch (SQLException e) {
-            System.err.println("Error fetching user role by user role: " + userRoleEum + " -> " + e.getMessage());
-            throw e;
         }
         return Optional.empty();
     }
@@ -79,9 +70,6 @@ public class UserRoleRepository {
                     throw new SQLException("Failed to retrieve generated user role ID.");
                 }
             }
-        } catch (SQLException e) {
-            System.err.println("Error saving user role: " + e.getMessage());
-            throw e;
         }
     }
 
@@ -100,9 +88,6 @@ public class UserRoleRepository {
             }
             System.out.println("User role with id " + id + " deleted successfully.");
             return;
-        } catch (SQLException e) {
-            System.err.println("Error deleting user role: " + e.getMessage());
-            throw e;
         }
     }
 }
