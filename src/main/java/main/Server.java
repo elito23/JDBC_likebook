@@ -32,7 +32,7 @@ public class Server {
                     Thread.sleep(3000);
                 } catch (InterruptedException ie) {
                     Thread.currentThread().interrupt();
-                    logger.warning("Retry sleep interrupted");
+                    logger.log(Level.SEVERE,"Retry sleep interrupted: ",e);
                     return;
                 }
             }
@@ -66,7 +66,6 @@ public class Server {
                 CommandFactory commandFactory = new CommandFactory();
                 ClientHandler handler = new ClientHandler(clientSocket, commandFactory);
 
-//                MyThread clientThread = new MyThread(handler);
                 Thread clientThread = new Thread(handler);
                 clientThread.start();
 

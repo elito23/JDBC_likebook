@@ -30,6 +30,7 @@ public class CommandFactory {
             else
                 return "Unknown command: " + commandName + "\nAvailable Commands: " + getAvailableCommandsForRoles(userRoles);
         }
+
         if (anonymousCommands.containsKey(lowerCaseCommand)) {
             if(userRoles.size() != 0 &&(lowerCaseCommand.equals("login")||lowerCaseCommand.equals("register")))
                 return "You have to be logged out for this command!";

@@ -60,7 +60,6 @@ public class ClientHandler implements Runnable {
                 String input = reader.readLine();
                 if (input == null) break;
                 System.out.println("Received input from main: " + input);
-
                 String response;
                 try {
                     ensureConnectionIsAlive();
